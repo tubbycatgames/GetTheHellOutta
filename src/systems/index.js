@@ -1,3 +1,3 @@
-import MoveDot from './MoveDot'
+import MoveDot from "./MoveDot";
 
-export default [ MoveDot ]
+export default [MoveDot];

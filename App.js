@@ -1,3 +1,3 @@
-import Game from './src/Game'
+import Game from "./src/Game";
 
-export default Game
+export default Game;
