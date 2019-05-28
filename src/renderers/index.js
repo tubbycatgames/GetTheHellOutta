@@ -1,3 +1,3 @@
-import Dot from "./Dot";
+import Player from "./Player";
 
-export { Dot };
+export { Player };

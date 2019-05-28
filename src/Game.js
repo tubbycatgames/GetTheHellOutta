@@ -1,28 +1,24 @@
 import React from "react";
-import { StyleSheet, StatusBar } from "react-native";
+import styled from "styled-components";
 import { GameEngine } from "react-native-game-engine";
+import { StatusBar } from "react-native";
 
-import { Dot } from "./renderers";
 import systems from "./systems";
+import { Player } from "./renderers";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000"
-  }
-});
+const FullScreenEngine = styled(GameEngine)`
+  flex: 1;
+  background-color: #000;
+`;
 
-const startingXPositions = [40, 100, 160, 220, 280];
-const posY = 200;
-
-const dots = startingXPositions.map((posX, i) => {
-  return { position: [posX, posY], renderer: <Dot key={i} /> };
-});
+const entities = [
+  { id: Player.id, position: [300, 100], renderer: <Player /> }
+];
 
 const Game = () => (
-  <GameEngine style={styles.container} systems={systems} entities={dots}>
+  <FullScreenEngine systems={systems} entities={entities}>
     <StatusBar hidden={true} />
-  </GameEngine>
+  </FullScreenEngine>
 );
 
 export default Game;

@@ -1,3 +1,3 @@
-import MoveDot from "./MoveDot";
+import movePlayer from "./move-player";
 
-export default [MoveDot];
+export default [movePlayer];
