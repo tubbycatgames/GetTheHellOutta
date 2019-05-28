@@ -1,17 +1,36 @@
+import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components/native";
 
-const getDiameter = props => props.diameter;
+const getDiameter = ({ radius }) => radius * 2;
+const getRadius = ({ radius }) => radius;
 
-const Circle = styled.View`
+export const Circle = styled.View`
   background-color: white;
-  border-color: #ccc;
+  border-color: ${props => props.color};
   border-radius: ${getDiameter};
   border-width: 4;
   height: ${getDiameter};
-  left: ${props => props.left};
+  left: ${props => props.position.x - getRadius(props)};
   position: absolute;
-  top: ${props => props.top};
+  top: ${props => props.position.y + getRadius(props)};
   width: ${getDiameter};
 `;
 
-export default Circle;
+export const positionProp = PropTypes.shape({
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
+});
+
+Circle.propTypes = {
+  color: PropTypes.string.isRequired,
+  position: positionProp.isRequired,
+  radius: PropTypes.number.isRequired
+};
+
+export const MediumCircle = props => <Circle radius={20} {...props} />;
+
+MediumCircle.propTypes = {
+  color: PropTypes.string.isRequired,
+  position: positionProp.isRequired
+};

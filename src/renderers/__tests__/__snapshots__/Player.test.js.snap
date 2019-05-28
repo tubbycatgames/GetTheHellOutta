@@ -2,23 +2,28 @@
 
 exports[`Player should render a player 1`] = `
 <View
-  diameter={40}
-  left={1}
+  color="#000000"
+  position={
+    Object {
+      "x": 21,
+      "y": 21,
+    }
+  }
+  radius={20}
   style={
     Array [
       Object {
         "backgroundColor": "white",
-        "borderColor": "#ccc",
+        "borderColor": "#000000",
         "borderRadius": 40,
         "borderWidth": 4,
         "height": 40,
         "left": 1,
         "position": "absolute",
-        "top": 1,
+        "top": 41,
         "width": 40,
       },
     ]
   }
-  top={1}
 />
 `;

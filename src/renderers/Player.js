@@ -1,21 +1,11 @@
-import PropTypes from "prop-types";
 import React from "react";
 
-import { Circle } from "../components";
+import { MediumCircle, positionProp } from "../components";
 
-const RADIUS = 20;
-const DIAMETER = RADIUS * 2;
-
-const Player = ({ position }) => {
-  const x = position[0] - RADIUS;
-  const y = position[1] - RADIUS;
-  return <Circle diameter={DIAMETER} left={x} top={y} />;
-};
+const Player = props => <MediumCircle color={"#000000"} {...props} />;
 
 Player.id = "Player";
 
-Player.propTypes = {
-  position: PropTypes.arrayOf(PropTypes.number).isRequired
-};
+Player.propTypes = { position: positionProp.isRequired };
 
 export default Player;

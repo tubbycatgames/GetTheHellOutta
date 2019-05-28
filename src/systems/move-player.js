@@ -1,9 +1,5 @@
 import { Player } from "../renderers";
 
-const getPlayer = entities => {
-  return Object.entries(entities).find(entity => entity[1].id == Player.id);
-};
-
 const updateEntity = (entities, id, entity) => {
   return {
     ...entities,
@@ -13,11 +9,12 @@ const updateEntity = (entities, id, entity) => {
 
 const movePlayer = (entities, { touches }) => {
   if (touches.length) {
-    const [id, player] = getPlayer(entities);
-    const { pageX, pageY } = touches[0].event;
-    const position = [pageX, pageY];
+    const player = entities[Player.id];
 
-    return updateEntity(entities, id, {
+    const { pageX, pageY } = touches[0].event;
+    const position = { x: pageX, y: pageY };
+
+    return updateEntity(entities, Player.id, {
       ...player,
       position
     });

@@ -1,3 +1,3 @@
-import Circle from "./Circle";
+import { MediumCircle, positionProp } from "./Circle";
 
-export { Circle };
+export { MediumCircle, positionProp };

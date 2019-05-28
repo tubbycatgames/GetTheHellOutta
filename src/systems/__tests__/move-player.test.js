@@ -4,9 +4,8 @@ import movePlayer from "../move-player";
 
 describe("movePlayer", () => {
   const startingEntities = {
-    0: {
-      id: Player.id,
-      position: [0, 0]
+    [Player.id]: {
+      position: { x: 0, y: 0 }
     }
   };
 
@@ -21,7 +20,9 @@ describe("movePlayer", () => {
     const touches = [touch1, touch2];
 
     const entities = movePlayer(startingEntities, { touches });
-    expect(Object.entries(entities)).toHaveLength(1);
-    expect(entities[0].position).toEqual([5, 6]);
+
+    const player = entities[Player.id];
+    expect(player).toBeDefined();
+    expect(player.position).toEqual({ x: 5, y: 6 });
   });
 });
