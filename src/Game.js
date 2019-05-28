@@ -11,9 +11,7 @@ const FullScreenEngine = styled(GameEngine)`
   background-color: #000;
 `;
 
-const entities = [
-  { id: Player.id, position: [300, 100], renderer: <Player /> }
-];
+const entities = [{ id: Player.id, position: [300, 100], renderer: Player }];
 
 const Game = () => (
   <FullScreenEngine systems={systems} entities={entities}>
