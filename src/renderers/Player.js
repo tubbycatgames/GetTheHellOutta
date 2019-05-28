@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -25,5 +26,9 @@ const Player = ({ position }) => {
 };
 
 Player.id = "Player";
+
+Player.propTypes = {
+  position: PropTypes.arrayOf(PropTypes.number).isRequired
+};
 
 export default Player;

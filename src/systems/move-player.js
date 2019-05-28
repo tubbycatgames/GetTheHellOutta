@@ -1,9 +1,7 @@
 import { Player } from "../renderers";
 
 const getPlayer = entities => {
-  return Object.entries(entities).find(
-    ([id, entity]) => entity.id == Player.id
-  );
+  return Object.entries(entities).find(entity => entity[1].id == Player.id);
 };
 
 const updateEntity = (entities, id, entity) => {
