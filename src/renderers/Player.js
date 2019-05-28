@@ -1,23 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
-import styled from "styled-components";
+
+import { Circle } from "../components";
 
 const RADIUS = 20;
 const DIAMETER = RADIUS * 2;
-
-const getDiameter = props => props.diameter;
-
-const Circle = styled.View`
-  background-color: white;
-  border-color: #ccc;
-  border-radius: ${getDiameter};
-  border-width: 4;
-  height: ${getDiameter};
-  left: ${props => props.left};
-  position: absolute;
-  top: ${props => props.top};
-  width: ${getDiameter};
-`;
 
 const Player = ({ position }) => {
   const x = position[0] - RADIUS;
