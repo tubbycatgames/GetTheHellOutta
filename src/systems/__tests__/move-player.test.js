@@ -1,10 +1,8 @@
-import { Player } from "../../renderers";
-
 import movePlayer from "../move-player";
 
 describe("movePlayer", () => {
   const startingEntities = {
-    [Player.id]: {
+    player: {
       position: { x: 0, y: 0 }
     }
   };
@@ -21,7 +19,7 @@ describe("movePlayer", () => {
 
     const entities = movePlayer(startingEntities, { touches });
 
-    const player = entities[Player.id];
+    const player = entities.player;
     expect(player).toBeDefined();
     expect(player.position).toEqual({ x: 5, y: 6 });
   });

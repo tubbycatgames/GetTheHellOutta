@@ -4,8 +4,6 @@ import { MediumCircle, positionProp } from "../components";
 
 const Player = props => <MediumCircle color={"#000000"} {...props} />;
 
-Player.id = "Player";
-
 Player.propTypes = { position: positionProp.isRequired };
 
 export default Player;

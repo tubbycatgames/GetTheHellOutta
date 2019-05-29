@@ -1,4 +1,4 @@
-const moveVelocity = entities => {
+const applyVelocity = entities => {
   const movingEntities = Object.entries(entities).filter(
     entity => entity[1].velocity && entity[1].position
   );
@@ -6,12 +6,13 @@ const moveVelocity = entities => {
   if (movingEntities.length) {
     const updatedEntities = { ...entities };
     movingEntities.forEach(([id, entity]) => {
+      const position = {
+        x: entity.position.x + entity.velocity.x,
+        y: entity.position.y + entity.velocity.y
+      };
       updatedEntities[id] = {
         ...entity,
-        position: {
-          x: entity.position.x + entity.velocity.x,
-          y: entity.position.y + entity.velocity.y
-        }
+        position
       };
     });
     return updatedEntities;
@@ -20,4 +21,4 @@ const moveVelocity = entities => {
   }
 };
 
-export default moveVelocity;
+export default applyVelocity;

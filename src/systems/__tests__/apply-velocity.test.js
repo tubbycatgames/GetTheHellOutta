@@ -1,26 +1,20 @@
-import moveVelocity from "../move-velocity";
+import applyVelocity from "../apply-velocity";
 
-describe("moveVelocity", () => {
-  const entityId = "3";
-
+describe("applyVelocity", () => {
   it("should keep entities static without velocity", () => {
     const entity = { position: { x: 0, y: 0 } };
-    const startingEntities = {
-      [entityId]: entity
-    };
-    const entities = moveVelocity(startingEntities);
+    const startingEntities = { entity };
+    const entities = applyVelocity(startingEntities);
     expect(entities).toBe(startingEntities);
   });
 
   it("should move the entities with velocity", () => {
     const entity = { position: { x: 0, y: 0 }, velocity: { x: 1, y: 1 } };
-    const startingEntities = {
-      [entityId]: entity
-    };
+    const startingEntities = { entity };
 
-    const entities = moveVelocity(startingEntities);
+    const entities = applyVelocity(startingEntities);
 
-    const updatedEntity = entities[entityId];
+    const updatedEntity = entities.entity;
     expect(updatedEntity).toBeDefined();
     expect(updatedEntity.position).toEqual({ x: 1, y: 1 });
   });

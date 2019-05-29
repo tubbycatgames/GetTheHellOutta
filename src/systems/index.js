@@ -1,4 +1,4 @@
 import movePlayer from "./move-player";
-import moveVelocity from "./move-velocity";
+import applyVelocity from "./apply-velocity";
 
-export default [movePlayer, moveVelocity];
+export default [movePlayer, applyVelocity];
