@@ -2,12 +2,13 @@ import React from "react";
 
 import { MediumCircle, positionProp } from "../components";
 
-const Zoomer = props => <MediumCircle color={"#123456"} {...props} />;
-
-Zoomer.id = "Zoomer";
+const Zoomer = ({ position }) => (
+  <MediumCircle color={"#123456"} position={position} />
+);
 
 Zoomer.propTypes = {
-  position: positionProp.isRequired
+  position: positionProp.isRequired,
+  velocity: positionProp.isRequired
 };
 
 export default Zoomer;

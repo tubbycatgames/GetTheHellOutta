@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Zoomer should render a zoomer 1`] = `
+<View
+  color="#123456"
+  position={
+    Object {
+      "x": 21,
+      "y": 21,
+    }
+  }
+  radius={20}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "#123456",
+        "borderRadius": 40,
+        "borderWidth": 4,
+        "height": 40,
+        "left": 1,
+        "position": "absolute",
+        "top": 41,
+        "width": 40,
+      },
+    ]
+  }
+/>
+`;
