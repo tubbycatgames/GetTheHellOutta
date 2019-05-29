@@ -1,3 +1,5 @@
+import { Vector } from "../components";
+
 const updatePlayerPosition = (entities, position) => {
   return {
     ...entities,
@@ -11,7 +13,7 @@ const updatePlayerPosition = (entities, position) => {
 const movePlayer = (entities, { touches }) => {
   if (touches.length) {
     const { pageX, pageY } = touches[0].event;
-    return updatePlayerPosition(entities, { x: pageX, y: pageY });
+    return updatePlayerPosition(entities, new Vector(pageX, pageY));
   } else {
     return entities;
   }

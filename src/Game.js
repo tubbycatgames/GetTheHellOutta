@@ -5,6 +5,7 @@ import { StatusBar } from "react-native";
 
 import systems from "./systems";
 import { Player, Zoomer } from "./renderers";
+import { Vector } from "./components";
 
 const FullScreenEngine = styled(GameEngine)`
   flex: 1;
@@ -13,13 +14,13 @@ const FullScreenEngine = styled(GameEngine)`
 
 const entities = {
   player: {
-    position: { x: 300, y: 100 },
+    position: new Vector(300, 100),
     renderer: Player
   },
   zoomer: {
-    position: { x: 150, y: 0 },
+    position: new Vector(150, 0),
     renderer: Zoomer,
-    velocity: { x: 0, y: 1 }
+    velocity: new Vector(0, 1)
   }
 };
 

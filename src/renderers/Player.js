@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
 import React from "react";
 
-import { MediumCircle, positionProp } from "../components";
+import { MediumCircle, Vector } from "../components";
 
 const Player = props => <MediumCircle color={"#000000"} {...props} />;
 
-Player.propTypes = { position: positionProp.isRequired };
+Player.propTypes = {
+  position: PropTypes.instanceOf(Vector).isRequired
+};
 
 export default Player;

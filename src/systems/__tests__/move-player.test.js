@@ -1,9 +1,11 @@
+import { Vector } from "../../components";
+
 import movePlayer from "../move-player";
 
 describe("movePlayer", () => {
   const startingEntities = {
     player: {
-      position: { x: 0, y: 0 }
+      position: Vector.zero
     }
   };
 
@@ -21,6 +23,6 @@ describe("movePlayer", () => {
 
     const player = entities.player;
     expect(player).toBeDefined();
-    expect(player.position).toEqual({ x: 5, y: 6 });
+    expect(player.position).toEqual(new Vector(5, 6));
   });
 });

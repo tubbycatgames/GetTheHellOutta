@@ -4,7 +4,7 @@ exports[`Player should render a player 1`] = `
 <View
   color="#000000"
   position={
-    Object {
+    Vector {
       "x": 21,
       "y": 21,
     }

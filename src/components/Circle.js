@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components/native";
 
+import Vector from "./Vector";
+
 const getDiameter = ({ radius }) => radius * 2;
 const getRadius = ({ radius }) => radius;
 
@@ -13,18 +15,13 @@ export const Circle = styled.View`
   height: ${getDiameter};
   left: ${props => props.position.x - getRadius(props)};
   position: absolute;
-  top: ${props => props.position.y + getRadius(props)};
+  top: ${props => props.position.y - getRadius(props)};
   width: ${getDiameter};
 `;
 
-export const positionProp = PropTypes.shape({
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired
-});
-
 Circle.propTypes = {
   color: PropTypes.string.isRequired,
-  position: positionProp.isRequired,
+  position: PropTypes.instanceOf(Vector).isRequired,
   radius: PropTypes.number.isRequired
 };
 
@@ -32,5 +29,5 @@ export const MediumCircle = props => <Circle radius={20} {...props} />;
 
 MediumCircle.propTypes = {
   color: PropTypes.string.isRequired,
-  position: positionProp.isRequired
+  position: PropTypes.instanceOf(Vector).isRequired
 };

@@ -4,7 +4,7 @@ exports[`Zoomer should render a zoomer 1`] = `
 <View
   color="#123456"
   position={
-    Object {
+    Vector {
       "x": 21,
       "y": 21,
     }

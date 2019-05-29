@@ -1,3 +1,4 @@
-import { MediumCircle, positionProp } from "./Circle";
+import { MediumCircle } from "./Circle";
+import Vector from "./Vector";
 
-export { MediumCircle, positionProp };
+export { MediumCircle, Vector };

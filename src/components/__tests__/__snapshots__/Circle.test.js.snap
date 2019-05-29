@@ -4,7 +4,7 @@ exports[`Circle should render a circle 1`] = `
 <View
   color="#543210"
   position={
-    Object {
+    Vector {
       "x": 5,
       "y": 5,
     }

@@ -33,7 +33,7 @@ exports[`Game should render the full game 1`] = `
     <View
       color="#000000"
       position={
-        Object {
+        Vector {
           "x": 300,
           "y": 100,
         }
@@ -67,7 +67,7 @@ exports[`Game should render the full game 1`] = `
     <View
       color="#123456"
       position={
-        Object {
+        Vector {
           "x": 150,
           "y": 0,
         }
