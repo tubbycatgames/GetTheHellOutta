@@ -6,4 +6,10 @@ describe("Vector", () => {
     expect(vector.x).toEqual(1);
     expect(vector.y).toEqual(2);
   });
+
+  it("should support multiplying a vector by a constant", () => {
+    const vector = Vector.mult(new Vector(2, 3), 4);
+    expect(vector.x).toEqual(8);
+    expect(vector.y).toEqual(12);
+  });
 });

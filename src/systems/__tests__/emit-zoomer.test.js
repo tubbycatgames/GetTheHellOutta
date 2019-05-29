@@ -1,10 +1,10 @@
 import { Zoomer } from "../../renderers";
 
-import emitZoomer, { maxZoomers } from "../emit-zoomer";
+import emitZoomer, { emissionGapMs, maxZoomers } from "../emit-zoomer";
 
 describe("emitZoomer", () => {
   it("should create a zoomer when none present", () => {
-    const entities = emitZoomer({});
+    const entities = emitZoomer({}, { time: { current: 654321 } });
 
     const entity = entities[0];
     expect(entity).toBeDefined();
@@ -14,11 +14,14 @@ describe("emitZoomer", () => {
   it("should not create a zoomer when too recent", () => {
     const startingEntities = [
       {
-        createdAt: Date.now(),
+        createdAt: 0,
         renderer: Zoomer
       }
     ];
-    const entities = emitZoomer(startingEntities);
+
+    const current = emissionGapMs - 1;
+    const entities = emitZoomer(startingEntities, { time: { current } });
+
     expect(entities).toBe(startingEntities);
   });
 
@@ -29,9 +32,12 @@ describe("emitZoomer", () => {
         renderer: Zoomer
       }
     ];
-    const entities = emitZoomer(startingEntities);
+
+    const current = emissionGapMs + 1;
+    const entities = emitZoomer(startingEntities, { time: { current } });
 
     expect(Object.keys(entities)).toHaveLength(2);
+    expect(entities[1].createdAt).toBe(current);
   });
 
   it("should not create zoomers if there are too many", () => {
@@ -43,7 +49,7 @@ describe("emitZoomer", () => {
       };
     }
 
-    const entities = emitZoomer(startingEntities);
+    const entities = emitZoomer(startingEntities, { time: { current: 0 } });
 
     expect(entities).toBe(startingEntities);
   });

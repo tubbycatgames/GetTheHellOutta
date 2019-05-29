@@ -6,6 +6,10 @@ export default class Vector {
     return new Vector(v1.x + v2.x, v1.y + v2.y);
   }
 
+  static mult(v, factor) {
+    return new Vector(v.x * factor, v.y * factor);
+  }
+
   constructor(_x, _y) {
     this.x = _x;
     this.y = _y;

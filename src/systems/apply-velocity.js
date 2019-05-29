@@ -1,6 +1,6 @@
 import { Vector } from "../components";
 
-const applyVelocity = entities => {
+const applyVelocity = (entities, { time }) => {
   const movingEntities = Object.entries(entities).filter(
     entity => entity[1].velocity && entity[1].position
   );
@@ -8,9 +8,10 @@ const applyVelocity = entities => {
   if (movingEntities.length) {
     const updatedEntities = { ...entities };
     movingEntities.forEach(([id, entity]) => {
+      const positionChange = Vector.mult(entity.velocity, time.delta / 1000);
       updatedEntities[id] = {
         ...entity,
-        position: Vector.add(entity.position, entity.velocity)
+        position: Vector.add(entity.position, positionChange)
       };
     });
     return updatedEntities;

@@ -6,7 +6,7 @@ describe("applyVelocity", () => {
   it("should keep entities static without velocity", () => {
     const entity = { position: Vector.zero };
     const startingEntities = { entity };
-    const entities = applyVelocity(startingEntities);
+    const entities = applyVelocity(startingEntities, { time: { delta: 5 } });
     expect(entities).toBe(startingEntities);
   });
 
@@ -14,7 +14,7 @@ describe("applyVelocity", () => {
     const entity = { position: Vector.zero, velocity: Vector.one };
     const startingEntities = { entity };
 
-    const entities = applyVelocity(startingEntities);
+    const entities = applyVelocity(startingEntities, { time: { delta: 1000 } });
 
     const updatedEntity = entities.entity;
     expect(updatedEntity).toBeDefined();
