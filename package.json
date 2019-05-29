@@ -14,7 +14,7 @@
     "android": "expo start --android",
     "eject": "expo eject",
     "ios": "expo start --ios",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint src --ext .js",
     "start": "expo start",
     "test": "jest"
   },
