@@ -13,14 +13,14 @@ exports[`Circle should render a circle 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "white",
-        "borderColor": "#543210",
+        "backgroundColor": "#543210",
+        "borderColor": "white",
         "borderRadius": 10,
         "borderWidth": 4,
         "height": 10,
         "left": 0,
         "position": "absolute",
-        "top": 10,
+        "top": 0,
         "width": 10,
       },
     ]

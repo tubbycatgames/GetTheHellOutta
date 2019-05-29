@@ -13,14 +13,14 @@ exports[`Player should render a player 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "white",
-        "borderColor": "#000000",
+        "backgroundColor": "#000000",
+        "borderColor": "white",
         "borderRadius": 40,
         "borderWidth": 4,
         "height": 40,
         "left": 1,
         "position": "absolute",
-        "top": 41,
+        "top": 1,
         "width": 40,
       },
     ]

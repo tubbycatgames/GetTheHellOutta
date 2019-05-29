@@ -8,8 +8,8 @@ const getDiameter = ({ radius }) => radius * 2;
 const getRadius = ({ radius }) => radius;
 
 export const Circle = styled.View`
-  background-color: white;
-  border-color: ${props => props.color};
+  background-color: ${props => props.color};
+  border-color: white;
   border-radius: ${getDiameter};
   border-width: 4;
   height: ${getDiameter};
