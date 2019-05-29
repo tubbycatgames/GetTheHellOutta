@@ -2,7 +2,7 @@ import { Vector } from "../components";
 import { Zoomer } from "../renderers";
 
 const emissionGapMs = 5000;
-const maxZoomers = 6;
+export const maxZoomers = 6;
 
 const emitZoomer = entities => {
   const zoomers = Object.values(entities).filter(
