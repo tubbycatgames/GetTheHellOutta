@@ -19,7 +19,7 @@ const emitZoomer = (entities, { time }) => {
     if (isZoomerDue) {
       return {
         ...entities,
-        [zoomerCount]: {
+        ["zoomer" + time.current]: {
           createdAt: time.current,
           position: new Vector(150, 0),
           renderer: Zoomer,
