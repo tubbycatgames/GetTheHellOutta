@@ -1,5 +1,6 @@
+import applyVelocity from "./apply-velocity";
 import emitZoomer from "./emit-zoomer";
 import movePlayer from "./move-player";
-import applyVelocity from "./apply-velocity";
+import spawnPlayer from "./spawn-player";
 
-export default [emitZoomer, applyVelocity, movePlayer];
+export default [spawnPlayer, movePlayer, emitZoomer, applyVelocity];

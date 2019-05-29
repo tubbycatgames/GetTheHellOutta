@@ -23,9 +23,6 @@ plugins:
   - react-native
   - prettier
 rules:
-  indent:
-    - error
-    - 2
   react-native/no-raw-text:
     - error
   react-native/split-platform-components:

@@ -4,20 +4,20 @@ import { Vector } from "../../components";
 
 describe("applyVelocity", () => {
   it("should keep entities static without velocity", () => {
-    const entity = { position: Vector.zero };
-    const startingEntities = { entity };
+    const startingEntities = { entity: { position: Vector.zero } };
     const entities = applyVelocity(startingEntities, { time: { delta: 5 } });
+
     expect(entities).toBe(startingEntities);
   });
 
   it("should move the entities with velocity", () => {
-    const entity = { position: Vector.zero, velocity: Vector.one };
-    const startingEntities = { entity };
-
+    const startingEntities = {
+      entity: { position: Vector.zero, velocity: Vector.one }
+    };
     const entities = applyVelocity(startingEntities, { time: { delta: 1000 } });
 
-    const updatedEntity = entities.entity;
-    expect(updatedEntity).toBeDefined();
-    expect(updatedEntity.position).toEqual(Vector.one);
+    expect(Object.keys(entities)).toHaveLength(1);
+    expect(entities.entity).toBeDefined();
+    expect(entities.entity.position).toEqual(Vector.one);
   });
 });
