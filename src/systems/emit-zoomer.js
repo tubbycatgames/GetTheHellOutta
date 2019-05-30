@@ -1,10 +1,10 @@
 import { Vector } from "../components";
 import { Zoomer } from "../renderers";
 
-export const emissionGapMs = 1000;
-export const maxZoomers = 6;
+export const emissionGapMs = 500;
+export const maxZoomers = 20;
 
-const emitZoomer = (entities, { time }) => {
+const emitZoomer = (entities, { screen, time }) => {
   const zoomers = Object.values(entities).filter(
     ({ renderer }) => renderer === Zoomer
   );
@@ -15,13 +15,14 @@ const emitZoomer = (entities, { time }) => {
       .map(z => z.createdAt)
       .reduce((acc, value) => Math.max(acc, value), 0);
     const isZoomerDue = lastZoomerCreationTime + emissionGapMs < time.current;
-
     if (isZoomerDue) {
+      const x = Math.random() * screen.width;
       return {
         ...entities,
         ["zoomer" + time.current]: {
+          color: "#ff4040",
           createdAt: time.current,
-          position: new Vector(150, 0),
+          position: new Vector(x, -20),
           renderer: Zoomer,
           velocity: new Vector(0, 100)
         }

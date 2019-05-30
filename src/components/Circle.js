@@ -11,7 +11,7 @@ export const Circle = styled.View`
   background-color: ${props => props.color};
   border-color: white;
   border-radius: ${getDiameter};
-  border-width: 4;
+  border-width: 1;
   height: ${getDiameter};
   left: ${props => props.position.x - getRadius(props)};
   position: absolute;
@@ -25,9 +25,15 @@ Circle.propTypes = {
   radius: PropTypes.number.isRequired
 };
 
-export const MediumCircle = props => <Circle radius={20} {...props} />;
-
-MediumCircle.propTypes = {
-  color: PropTypes.string.isRequired,
-  position: PropTypes.instanceOf(Vector).isRequired
+const CircleWithRadius = (radius, displayName) => {
+  const SizedCircle = props => <Circle radius={radius} {...props} />;
+  SizedCircle.displayName = displayName;
+  SizedCircle.propTypes = {
+    color: PropTypes.string.isRequired,
+    position: PropTypes.instanceOf(Vector).isRequired
+  };
+  return SizedCircle;
 };
+
+export const SmallCircle = CircleWithRadius(10, "SmallCircle");
+export const MediumCircle = CircleWithRadius(20, "MediumCircle");

@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { MediumCircle, Vector } from "../components";
+import { SmallCircle, Vector } from "../components";
 
-const Zoomer = ({ createdAt, position }) => (
-  <MediumCircle color={"#123456"} createdAt={createdAt} position={position} />
+const Zoomer = ({ color, createdAt, position }) => (
+  <SmallCircle color={color} createdAt={createdAt} position={position} />
 );
 
 const vectorProp = PropTypes.instanceOf(Vector);
 
 Zoomer.propTypes = {
+  color: PropTypes.string.isRequired,
   createdAt: PropTypes.number.isRequired,
   position: vectorProp.isRequired,
   velocity: vectorProp.isRequired

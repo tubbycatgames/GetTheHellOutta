@@ -10,19 +10,19 @@ exports[`Zoomer should render a zoomer 1`] = `
       "y": 21,
     }
   }
-  radius={20}
+  radius={10}
   style={
     Array [
       Object {
         "backgroundColor": "#123456",
         "borderColor": "white",
-        "borderRadius": 40,
-        "borderWidth": 4,
-        "height": 40,
-        "left": 1,
+        "borderRadius": 20,
+        "borderWidth": 1,
+        "height": 20,
+        "left": 11,
         "position": "absolute",
-        "top": 1,
-        "width": 40,
+        "top": 11,
+        "width": 20,
       },
     ]
   }
